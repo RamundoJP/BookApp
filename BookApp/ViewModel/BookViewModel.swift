@@ -43,9 +43,7 @@ class BookViewModel {
                 return
             }
             
-            DispatchQueue.main.async {
-                self?.bestSellers = bestSellers?.results.bestSellers ?? []
-            }
+            self?.bestSellers = bestSellers?.results.bestSellers ?? []
         })
     }
  
@@ -57,11 +55,7 @@ class BookViewModel {
             }
             
             if let bookResponse = bookResponse {
-                
-                DispatchQueue.main.async {
-                    self?.books = bookResponse.results.books
-                }
-                
+                self?.books = bookResponse.results.books
             }
         })
     }

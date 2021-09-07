@@ -16,7 +16,9 @@ class BookTableViewController: UITableViewController, BookTVDelegateProtocol {
     var bookViewModel = BookViewModel(serviceManager: BookService())
     
     func didFinishFetching() {
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     let reusableIdentifier = "cell"

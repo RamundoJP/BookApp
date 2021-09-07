@@ -26,7 +26,9 @@ class CollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     
     func configure(with books: [Book]) {
         self.bestSellers = books
-        self.collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
     
     // MARK: - CollectionView
