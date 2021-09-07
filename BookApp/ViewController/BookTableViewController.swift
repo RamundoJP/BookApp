@@ -49,7 +49,7 @@ class BookTableViewController: UITableViewController, BookTVDelegateProtocol {
         let section = bookViewModel.sections[section]
         
         if section == .BEST_SELLERS {
-            return 1 //bookViewModel.bestSellers.count
+            return 1
         } else {
             return bookViewModel.books.filter({ $0.genre == section }).count
         }
